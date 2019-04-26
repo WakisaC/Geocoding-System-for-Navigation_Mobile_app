@@ -1,5 +1,6 @@
 package com.example.wakisac.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -31,6 +32,15 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    public void start_fault_page(View view){
+        electricity();
+    }
+    public void electricity(){
+        Intent intent = new Intent(this,  Electricity_Fault.class);
+        startActivity(intent);
+
     }
 
     @Override

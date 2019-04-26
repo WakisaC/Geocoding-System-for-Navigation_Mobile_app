@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:text="Use your name and valid phone number to Register"
             android:textColor="@color/body"
             android:textStyle="bold"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="We won't give your information to anyone it's in good hands"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimaryDark2"
             android:textStyle="bold|italic"
             android:textSize="15dp"/>
         <LinearLayout

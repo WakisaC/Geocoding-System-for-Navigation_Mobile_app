@@ -25,19 +25,107 @@
                 android:layout_gravity="center"
                 android:src="@drawable/nav" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:text="Choose Type of Incident "
-                android:textColor="@color/blue"
-                android:textSize="25dp"
-                android:textStyle="bold" />
+                android:layout_gravity="center">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Choose "
+                    android:textColor="@color/blue"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/duru_sans" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Incident "
+                    android:textColor="@color/colorAccent"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/duru_sans" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center">
 
-        </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/escom"
+                android:layout_marginTop="20dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text=" Electricity fault (ESCOM)   "
+                    android:textAllCaps="false"
+                    android:background="@drawable/rounded"
+                    android:textColor="@color/blue"
+                    android:textSize="15dp"
+                    android:onClick="start_fault_page"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/duru_sans" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/water"
+                    android:layout_marginTop="20dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textAllCaps="false"
+                    android:text="  Water fault(Waterboard) "
+                    android:background="@drawable/rounded"
+                    android:textColor="@color/blue"
+                    android:layout_marginLeft="7dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/duru_sans" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/police1"
+                    android:layout_marginTop="20dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="  Criminal Case ( Police )  "
+                    android:background="@drawable/rounded"
+                    android:textColor="@color/blue"
+                    android:textAllCaps="false"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/duru_sans" />
+            </LinearLayout>
+
+    </LinearLayout>
+
     </ScrollView>
 
 
