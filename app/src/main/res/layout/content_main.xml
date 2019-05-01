@@ -71,7 +71,7 @@
                     android:background="@drawable/rounded"
                     android:textColor="@color/blue"
                     android:textSize="15dp"
-                    android:onClick="start_fault_page"
+                    android:onClick="start_electricity_fault_page"
                     android:textStyle="bold"
                     app:fontFamily="@font/duru_sans" />
             </LinearLayout>
@@ -98,6 +98,7 @@
                     android:layout_marginLeft="7dp"
                     android:textSize="15dp"
                     android:textStyle="bold"
+                    android:onClick="start_water_fault_page"
                     app:fontFamily="@font/duru_sans" />
             </LinearLayout>
             <LinearLayout

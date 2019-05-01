@@ -9,106 +9,115 @@
     tools:context=".Register"
     tools:showIn="@layout/activity_register">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Use your name and valid phone number to Register"
-            android:textColor="@color/body"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="We won't give your information to anyone it's in good hands"
-            android:textColor="@color/colorPrimaryDark2"
-            android:textStyle="bold|italic"
-            android:textSize="15dp"/>
+        >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/white"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="20dp"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Name :"
-                    android:textColor="@color/body"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:hint="Enter your name"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Phone :"
-                    android:textColor="@color/body"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:inputType="phone"
-                    android:hint="Enter your phone number"/>
-            </LinearLayout>
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Privacy Policy"
-                android:clickable="true"
-                android:textSize="20dp"
-                android:textStyle="italic"
-                android:layout_gravity="center"
-                android:alpha="0.8"/>
-            <Button
+                android:layout_marginTop="40dp"
+                android:text="Use your name and valid phone number to Register"
+                android:textColor="@color/body"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="We won't give your information to anyone it's in good hands"
+                android:textColor="@color/colorPrimaryDark2"
+                android:textStyle="bold|italic"
+                android:textSize="15dp"/>
+            <ProgressBar
+                android:id="@+id/pBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Register"
-                android:onClick="gotoMain"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/blue"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/white"/>
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp"
+                    >
+
+
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/textbox"
+                        android:hint="   Enter your name" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    >
+
+
+
+                    <EditText
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/textbox"
+                        android:hint="   Enter your phone number"
+                        android:inputType="number" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Privacy Policy"
+                    android:clickable="true"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:layout_gravity="center"
+                    android:alpha="0.8"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/save"
+                    android:layout_marginTop="30dp"
+                    android:text="Register"
+                    android:onClick="gotoMain"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/blue"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+
         </LinearLayout>
+    </ScrollView>
 
-
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

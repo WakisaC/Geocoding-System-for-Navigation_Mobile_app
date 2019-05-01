@@ -33,28 +33,32 @@ public class Electricity_Fault extends AppCompatActivity {
         spinner = findViewById(R.id.spinner1);
         spinner2 = findViewById(R.id.spinner2);
 //create a list of items for the spinner.
-        String[] items = new String[]{"Balaka", "Blantyre", "Chikwawa","Chiradzulu","Chitipa", "Dedza",
+        String[] districts = new String[]{"Balaka", "Blantyre", "Chikwawa","Chiradzulu","Chitipa", "Dedza",
                                         "Dowa", "Karonga","Kasungu","Likoma", "Lilongwe","Machinga","Mangochi",
                                         "Mchinji","Mulanje","Mwanza","Mzimba","Neno","Nkhata Bay","Nkhotakota","Nsanje",
                                         "Nsanje", "Ntchisi","Phalombe","Rumphi","Salima","Thyolo","Zomba"};
 
 //create an adapter to describe how the items are displayed, adapters are used in several places in android.
 //There are multiple variations of this, but this is the basic variant.
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, districts);
+
 //set the spinners adapter to the previously created one.
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         spinner.setAdapter(adapter);
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(parent.getItemAtPosition(position).equals("District")){
-                    //do nothing
-                }else {
-                    String item = parent.getItemAtPosition(position).toString();
+                if(parent.getItemAtPosition(position).equals("Zomba")){
+                    display_zomba();
 
-                    //show selected spinner item
-                    Toast.makeText(Electricity_Fault.this, "SElected" + item, Toast.LENGTH_SHORT).show();
-                }
+                }else if (parent.getItemAtPosition(position).equals("Blantyre")){
+                    display_blantyre();
+                    //String item = parent.getItemAtPosition(position).toString();
+
+
+                    }
             }
 
             @Override
@@ -64,5 +68,51 @@ public class Electricity_Fault extends AppCompatActivity {
         });
 
         }
+        public void display_zomba(){
+            //create areas for zomba
+            String[] zombaAreas = new String[]{"Chancellor College","Matawale","Nandolo","Old Naisi","Sadzi",};
+            ArrayAdapter<String> zomba = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, zombaAreas);
+            zomba.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner2.setAdapter(zomba);
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    if (parent.getItemAtPosition(position).equals("Chancellor College")){
+
+                    }else {
+                        String item = parent.getItemAtPosition(position).toString();
+
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+        }
+    public void display_blantyre(){
+        //create areas for bt
+        String[] zombaAreas = new String[]{"Limbe","Naperi","Namiwawa","Makata","Sunny Side",};
+        ArrayAdapter<String> zomba = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, zombaAreas);
+        zomba.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(zomba);
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (parent.getItemAtPosition(position).equals("Limbe")){
+
+                }else {
+                    String item = parent.getItemAtPosition(position).toString();
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
 
 }

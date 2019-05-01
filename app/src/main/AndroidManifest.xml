@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wakisac.myapplication">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -37,8 +39,8 @@
             android:label="@string/title_activity_electricity__fault"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Water_Fault"
-            android:label="@string/title_activity_water__fault"
+            android:name=".WaterFault"
+            android:label="Water Fault"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Electricity_Fault"
+    android:background="@color/background"
     tools:showIn="@layout/activity_electricity__fault">
 
 <ScrollView
@@ -60,9 +61,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/textbox"
-                android:hint="Enter house Number e.g PHC 1001/C"
-                android:textAllCaps="true" />
+                android:backgroundTint="@color/white"
+                android:hint="    Enter your Meter Number   "
+                android:inputType="number"
+                android:textAllCaps="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -81,24 +85,26 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/textbox"
-                android:hint="Enter brief fault description" />
+                android:backgroundTint="@color/white"
+                android:hint="         Enter brief fault description" />
 
 
 
         </LinearLayout>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Report"
-            android:textSize="20dp"
-            android:background="@color/blue"
-            android:textColor="@color/white"
+            android:id="@+id/reportButton"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:onClick=""
-            />
+            android:background="@color/blue"
+            android:text="Report"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
     </LinearLayout>
 

@@ -34,13 +34,21 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    public void start_fault_page(View view){
+    public void start_electricity_fault_page(View view){
         electricity();
     }
     public void electricity(){
         Intent intent = new Intent(this,  Electricity_Fault.class);
         startActivity(intent);
 
+    }
+    public void start_water_fault_page(View view){
+
+        water();
+    }
+    public void water(){
+        Intent intent = new Intent(this,  WaterFault.class);
+        startActivity(intent);
     }
 
     @Override
