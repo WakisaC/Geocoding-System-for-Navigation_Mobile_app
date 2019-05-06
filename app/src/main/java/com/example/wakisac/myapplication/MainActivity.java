@@ -50,6 +50,11 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this,  WaterFault.class);
         startActivity(intent);
     }
+    public void home(){
+        Intent intent = new Intent(this,  MainActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -90,7 +95,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.home) {
-            // Handle the camera action
+           home();
         } else if (id == R.id.My_Locations) {
 
         } else if (id == R.id.about) {

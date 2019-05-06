@@ -3,32 +3,40 @@ package com.example.wakisac.myapplication;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.annotation.Nullable;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
-    public  static  final String DATABASE_NAME = "Register.db";
-    public  static  final String TABLE_NAME = "user";
-      public  static  final String COL_1= "NAME";
-    public  static  final String COL_2 = "PHONE_NUMER";
+public class   DatabaseHelper extends SQLiteOpenHelper {
+
+    public  static  final String DATABASE_NAME = "UserData.db";
+    public  static  final String TABLE_NAME = "users";
+     public  static  final String COL_1 = "NAME";
+    public  static  final String COL_2= "PHONE";
+
 
     public DatabaseHelper(Context context) {
-        super(context,DATABASE_NAME,null,1);
+        super(context, DATABASE_NAME,null,1);
+
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table "+TABLE_NAME +"(NAME TEXT,PHONE_NUMBER INTEGER)");
-
+        db.execSQL("create table "+TABLE_NAME +"(NAME TEXT,PHONE INTEGER)");
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(" DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
 
     }
+    public void deleteCreateTable(String tableName){
+        SQLiteDatabase db= getWritableDatabase();
+        db.execSQL(" DROP TABLE IF EXISTS "+tableName);
+        onCreate(db);
+    }
+
     public boolean insertData(String name,int phone){
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -42,29 +50,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return true;
     }
+
     public Cursor getAllData(){
         SQLiteDatabase db =this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
     }
 
-    // get name from database
-    public String getName(){
-        String name ;
-        String querry = "select NAME from TABLENAME where ID = 1";
+
+    public int delete(String id){
+        SQLiteDatabase db =this.getWritableDatabase();
+        return db.delete(TABLE_NAME,"ID = ? ",new String[]{id});
+    }
+
+    //method to check if any user exists in database
+
+    public boolean user_exists(){
+        int k=0;
+        boolean user_existence;
+        String querry = "select count(*) from users";
 
         Cursor cursor = getReadableDatabase().rawQuery(querry,null);
-        name = cursor.getString(0);
-        return name;
-    }
-    // get phone from database
-    public int gePhone(){
-       int phone ;
-        String querry = "select PHONE from TABLENAME where ID = 1";
 
-        Cursor cursor = getReadableDatabase().rawQuery(querry,null);
-        phone = cursor.getInt(0);
-        return phone;
+        if (cursor.getCount()>0){
+            cursor.moveToFirst();
+            k = cursor.getInt(0);
+
+            }
+        if(k>0)
+            return true;
+        else
+            return false;
+
     }
+
 
 }

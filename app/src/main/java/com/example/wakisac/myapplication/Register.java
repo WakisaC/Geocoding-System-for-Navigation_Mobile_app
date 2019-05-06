@@ -21,6 +21,7 @@ public class Register extends AppCompatActivity {
     Button startButton;
     private ProgressBar pgsBar;
     AlertDialog.Builder builder;
+   // String server_url = "https://192.168.43.67:3001/api/report_fault"
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +81,9 @@ public class Register extends AppCompatActivity {
 
         }
         else {
-            //convert the string for phone to integer
             final int phone = Integer.parseInt(userPhone);
+       //convert the string for phone to integer
+
             // add data to the database in phone
            // add(name,phone);
 
