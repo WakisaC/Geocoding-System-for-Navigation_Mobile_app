@@ -28,14 +28,17 @@
                 android:textColor="@color/body"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:text="We won't give your information to anyone it's in good hands"
-                android:textColor="@color/colorPrimaryDark2"
-                android:textStyle="bold|italic"
-                android:textSize="15dp"/>
+                android:text="REGISTER"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                android:textSize="30dp"
+                app:fontFamily="@font/adamina" />
             <ProgressBar
                 android:id="@+id/pBar"
                 style="?android:attr/progressBarStyleLarge"
@@ -49,7 +52,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@color/white"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 >
@@ -66,11 +68,10 @@
              <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginLeft="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/textbox"
-                 android:inputType="textPersonName"
+                android:inputType="textPersonName"
                 android:hint="   Enter your name" />
             </android.support.design.widget.TextInputLayout>
 
@@ -87,15 +88,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/textbox"
-            android:hint="   Enter your phone number"
-            android:inputType="phone" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+265"
+                    android:textSize="18dp" />
+
+                <com.santalu.maskedittext.MaskEditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="20dp"
+                    android:hint="   Enter your phone number"
+                    android:inputType="phone"
+                    app:met_mask="#########" />
+            </LinearLayout>
+
+
+
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 

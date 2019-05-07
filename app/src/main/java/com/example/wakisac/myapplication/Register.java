@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -15,13 +16,16 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.santalu.maskedittext.MaskEditText;
+
 public class Register extends AppCompatActivity {
     //create database object
     DatabaseHelper myDb;
     Button startButton;
     private ProgressBar pgsBar;
     AlertDialog.Builder builder;
-   // String server_url = "https://192.168.43.67:3001/api/report_fault"
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +72,8 @@ public class Register extends AppCompatActivity {
 
     public void results(){
         EditText username =(EditText) findViewById(R.id.name);
-        EditText phoneInput =(EditText) findViewById(R.id.phone);
+        MaskEditText phoneInput = findViewById(R.id.phone);
+
         final String name = username.getText().toString();
         String userPhone = phoneInput.getText().toString();
 
@@ -81,6 +86,7 @@ public class Register extends AppCompatActivity {
 
         }
         else {
+
             final int phone = Integer.parseInt(userPhone);
        //convert the string for phone to integer
 
@@ -110,11 +116,12 @@ public class Register extends AppCompatActivity {
         boolean isInserted = myDb.insertData(name,phone);
         if (isInserted =true){
             builder.setTitle(" User Created Successfully");
-            builder.setMessage(" Name :  "+ name +"\n Phone : "+ phone);
+            builder.setMessage(" Name :  "+ name +"\n Phone : +265"+ phone);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     ///// go to general assessment///////
+
                     mainActivity();
                 }
             });

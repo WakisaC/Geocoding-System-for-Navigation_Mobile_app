@@ -22,7 +22,7 @@ public class   DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table "+TABLE_NAME +"(NAME TEXT,PHONE INTEGER)");
+        db.execSQL("create table "+TABLE_NAME +"(NAME TEXT,PHONE BIGINTEGER)");
     }
 
     @Override
@@ -61,6 +61,26 @@ public class   DatabaseHelper extends SQLiteOpenHelper {
     public int delete(String id){
         SQLiteDatabase db =this.getWritableDatabase();
         return db.delete(TABLE_NAME,"ID = ? ",new String[]{id});
+    }
+
+    public String getName(){
+        String name;
+        String querry = "select name from users";
+        Cursor cursor = getReadableDatabase().rawQuery(querry,null);
+        cursor.moveToFirst();
+
+        name = cursor.getString(0);
+        return name;
+    }
+
+    public long getPhone(){
+        long phone;
+        String querry = "select phone from users";
+
+        Cursor cursor = getReadableDatabase().rawQuery(querry,null);
+        cursor.moveToFirst();
+        phone = cursor.getLong(0);
+        return phone;
     }
 
     //method to check if any user exists in database
