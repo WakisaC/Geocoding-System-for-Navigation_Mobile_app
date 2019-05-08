@@ -35,7 +35,7 @@ public class Electricity_Fault extends AppCompatActivity {
     private Spinner spinner,spinner2;
     Button button;
     AlertDialog.Builder builder;
-    String server_url = "http://192.168.43.61/connect.php";
+    String server_url = "http://192.168.43.222/connect.php";
     String server_url2 = "http://192.168.43.161:3003/report";
 
     DatabaseHelper myDb;
